@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/userAva"
+            android:layout_height="60dp"
+            android:layout_width="60dp"
+            android:layout_margin="16dp"
+            android:src="@mipmap/ic_launcher"
+            android:scaleType="fitCenter"
+            app:riv_corner_radius="30dp"
+            app:riv_border_width="2dp"
+            app:riv_border_color="#FFFF"
+            app:riv_mutate_background="true"
+            app:riv_tile_mode="repeat"
+            app:riv_oval="true" />
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UserName"
+            android:typeface="sans"
+            android:textStyle="bold"
+            android:textColor="@android:color/holo_blue_light"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/userAva"
+            android:layout_toEndOf="@+id/userAva" />
+        <TextView
+            android:id="@+id/timestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:text="1 day"
+            android:typeface="sans"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/graphic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/tv_like_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:typeface="sans"
+        android:textStyle="bold"
+        android:text="1000 likes"
+        android:textColor="@android:color/holo_blue_light"/>
+    <TextView
+        android:id="@+id/tv_view_all_cmt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="View all comments"
+        android:typeface="sans"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/username_cmt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:typeface="sans"
+            android:textStyle="bold"
+            android:text="name1"
+            android:textColor="@android:color/holo_blue_light"
+            />
+        <TextView
+            android:id="@+id/cmt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="comments"
+            android:typeface="sans"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/username_cmt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:typeface="sans"
+            android:textStyle="bold"
+            android:text="name1"
+            android:textColor="@android:color/holo_blue_light"
+            />
+        <TextView
+            android:id="@+id/cmt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="comments"
+            android:typeface="sans"/>
+    </LinearLayout>
+
+
+</LinearLayout>
