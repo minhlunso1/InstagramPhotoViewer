@@ -2,7 +2,7 @@
 
 **InstagramPhotoViewer_Minh* 
 
-Submitted by: **Minh Nguyen Anh**
+Submitted by: **Minh Nguyen**
 
 Time spent: 9 hours spent in total
 
@@ -46,7 +46,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [2016] [Minh Nguyen Anh]
+    Copyright [2016] [Minh Nguyen]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
