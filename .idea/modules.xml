@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Note.txt.iml" filepath="$PROJECT_DIR$/Note.txt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/InstagramView_Minh.iml" filepath="$PROJECT_DIR$/InstagramView_Minh.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

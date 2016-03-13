@@ -7,6 +7,8 @@ import android.widget.TextView;
 
 import com.makeramen.roundedimageview.RoundedImageView;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import minhna.submission.instagramphotoviewer.R;
 
 /**
@@ -14,27 +16,32 @@ import minhna.submission.instagramphotoviewer.R;
  */
 public class ItemViewHolder extends RecyclerView.ViewHolder {
 
+    @Bind(R.id.tv_view_all_cmt)
+    protected TextView viewAllComments;
+    @Bind(R.id.divider)
+    protected View divider;
+    @Bind(R.id.userAva)
     protected RoundedImageView userAva;
+    @Bind(R.id.userName)
     protected TextView tvUserName;
+    @Bind(R.id.timestamp)
     protected TextView tvTimeStamp;
+    @Bind(R.id.graphic)
     protected ImageView imgage;
+    @Bind(R.id.tv_like_count)
     protected TextView tvLikeCount;
+    @Bind(R.id.username_cmt1)
     protected TextView tvUsernameCmt1;
+    @Bind(R.id.cmt1)
     protected TextView tvCmt1;
+    @Bind(R.id.username_cmt2)
     protected TextView tvUsernameCmt2;
+    @Bind(R.id.cmt2)
     protected TextView tvCmt2;
 
     public ItemViewHolder(View itemView) {
         super(itemView);
-        this.userAva = (RoundedImageView) itemView.findViewById(R.id.userAva);
-        this.tvUserName = (TextView) itemView.findViewById(R.id.userName);
-        this.tvTimeStamp = (TextView) itemView.findViewById(R.id.timestamp);
-        this.imgage = (ImageView) itemView.findViewById(R.id.graphic);
-        this.tvLikeCount = (TextView) itemView.findViewById(R.id.tv_like_count);
-        this.tvUsernameCmt1 = (TextView) itemView.findViewById(R.id.username_cmt1);
-        this.tvUsernameCmt2 = (TextView) itemView.findViewById(R.id.username_cmt2);
-        this.tvCmt1 = (TextView) itemView.findViewById(R.id.cmt1);
-        this.tvCmt2 = (TextView) itemView.findViewById(R.id.cmt2);
+        ButterKnife.bind(this, itemView);
     }
 
 }

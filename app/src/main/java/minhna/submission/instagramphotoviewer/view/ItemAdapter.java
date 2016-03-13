@@ -19,7 +19,7 @@ import minhna.submission.instagramphotoviewer.pojo.Item;
 public class ItemAdapter extends RecyclerView.Adapter<ItemViewHolder> {
     private List<Item> list;
     private Context context;
-    private long currentItemId;
+    private int currentColor;
     private ItemClickListener listener;
 
     public ItemAdapter(Context context, List<Item> list, ItemClickListener listener) {
@@ -30,7 +30,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemViewHolder> {
     }
 
     public interface ItemClickListener {
-        void onItemClick(long ItemId);
+        void onItemClick(String ItemId);
     }
 
     @Override
@@ -44,24 +44,54 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemViewHolder> {
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
         final Item item = list.get(position);
+        int color=0;
+        try {
+            if (currentColor==0) {
+                color=android.R.color.holo_blue_bright;
+                currentColor++;
+            } else if (currentColor==1) {
+                color=android.R.color.holo_orange_light;
+                currentColor++;
+            } else if (currentColor==2) {
+                color=android.R.color.holo_green_light;
+                currentColor++;
+            } else {
+                color=android.R.color.holo_red_light;
+                currentColor=0;
+            }
+            holder.divider.setBackgroundColor(context.getResources().getColor(color));
 
-        Picasso.with(context)
-                .load(item.getProfileAva())
-                .placeholder(R.drawable.placeholder)
-                .error(R.drawable.placeholder)
-                .into(holder.userAva);
-        holder.tvUserName.setText(item.getProfileName());
-        holder.tvTimeStamp.setText(item.getTimeStamp());
-        Picasso.with(context)
-                .load(item.getProfileAva())
-                .placeholder(R.drawable.placeholder)
-                .error(R.drawable.placeholder)
-                .into(holder.imgage);
-        holder.tvLikeCount.setText(item.getLikeCount());
-        holder.tvUsernameCmt1.setText(item.getLatestChild1().getName());
-        holder.tvCmt1.setText(item.getLatestChild1().getComment());
-        holder.tvUsernameCmt2.setText(item.getLatestChild2().getName());
-        holder.tvCmt2.setText(item.getLatestChild2().getComment());
+            Picasso.with(context)
+                    .load(item.getProfileAva())
+                    .placeholder(R.drawable.placeholder)
+                    .error(R.drawable.placeholder)
+                    .into(holder.userAva);
+            holder.tvUserName.setText(item.getProfileName());
+            holder.tvUserName.setTextColor(context.getResources().getColor(color));
+            holder.tvTimeStamp.setText(item.getTimeStamp());
+            Picasso.with(context)
+                    .load(item.getImage())
+                    .placeholder(R.drawable.placeholder2)
+                    .error(R.drawable.placeholder2)
+                    .into(holder.imgage);
+            holder.tvLikeCount.setText(item.getLikeCount());
+            holder.tvLikeCount.setTextColor(context.getResources().getColor(color));
+            holder.tvUsernameCmt1.setText(item.getLatestChild1().getName());
+            holder.tvUsernameCmt1.setTextColor(context.getResources().getColor(color));
+            holder.tvCmt1.setText(item.getLatestChild1().getComment());
+            holder.tvUsernameCmt2.setText(item.getLatestChild2().getName());
+            holder.tvUsernameCmt2.setTextColor(context.getResources().getColor(color));
+            holder.tvCmt2.setText(item.getLatestChild2().getComment());
+
+            holder.viewAllComments.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.onItemClick(item.getId());
+                }
+            });
+        } catch (NullPointerException e){
+            e.printStackTrace();
+        }
     }
 
     @Override
